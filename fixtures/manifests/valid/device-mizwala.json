@@ -1,0 +1,31 @@
+{
+  "kahf_connect": "1",
+  "id": "com.kahflabs.mizwala.times",
+  "name": {
+    "en": "Mizwala",
+    "ar": "مزولة"
+  },
+  "description": {
+    "en": "Times you keep for prayer, from Mizwala on this phone."
+  },
+  "version": "1.0.0",
+  "author": {
+    "name": "Kahf Labs"
+  },
+  "host": {
+    "kind": "device",
+    "package": "com.kahf.mizwala"
+  },
+  "auth": {
+    "kind": "none"
+  },
+  "capabilities": [
+    {
+      "id": "time.busy",
+      "version": 1,
+      "reason": {
+        "en": "To keep those times free."
+      }
+    }
+  ]
+}

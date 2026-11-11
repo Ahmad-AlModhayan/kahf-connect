@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kahflabs.com/connect/1/capabilities/actions.propose.v1.json",
+  "title": "actions.propose@1 — an agent proposes a changeset to a product",
+  "tool": "kahf_actions_propose_v1",
+  "input": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["label", "commands"],
+    "properties": {
+      "label": { "type": "string", "minLength": 1, "maxLength": 200 },
+      "commands": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 20,
+        "items": { "type": "object", "required": ["kind"], "properties": { "kind": { "type": "string" } } }
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": ["proposal_id", "status"],
+    "properties": {
+      "proposal_id": { "type": "string", "minLength": 1 },
+      "status": { "enum": ["pending", "staged", "rejected"] },
+      "problems": { "type": "array", "items": { "type": "string" } }
+    }
+  },
+  "rules": [
+    "commands are the product's own wire form (Qasd: CoreCommand.toJson)",
+    "nothing is applied until the person accepts the staged changeset"
+  ]
+}

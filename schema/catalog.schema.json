@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kahflabs.com/connect/1/catalog.schema.json",
+  "title": "Kahf Connect catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["kahf_connect", "issued_at", "key_id", "entries"],
+  "properties": {
+    "kahf_connect": { "const": "1" },
+    "issued_at": { "type": "string", "format": "date-time" },
+    "key_id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["reviewed", "manifest"],
+        "additionalProperties": false,
+        "properties": {
+          "reviewed": { "const": true },
+          "manifest": { "$ref": "manifest.schema.json" }
+        }
+      }
+    }
+  }
+}

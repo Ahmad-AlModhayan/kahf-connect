@@ -1,0 +1,31 @@
+name: Bug report
+description: Something in the spec, a schema, an SDK or the reference connector is wrong
+labels: [needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Security problem? Do not file it here; use the private report link on the issue chooser.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where
+      options: [SPEC.md, schema, fixtures, Dart SDK, Kotlin SDK, reference connector, catalog, docs, other]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, what you got.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: How to reproduce
+      description: Commands or a fixture that goes red on this bug.
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit

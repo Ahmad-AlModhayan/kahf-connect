@@ -1,0 +1,94 @@
+{
+  "kahf_connect": "1",
+  "issued_at": "2026-10-26T07:55:21.590753Z",
+  "key_id": "kahf-2026-1",
+  "entries": [
+    {
+      "reviewed": true,
+      "manifest": {
+        "kahf_connect": "1",
+        "id": "com.kahflabs.calendar-feed",
+        "name": {
+          "en": "Calendar feed",
+          "ar": "رابط التقويم"
+        },
+        "description": {
+          "en": "Busy times from your calendar's private address — Google, Outlook, iCloud or any other. No sign-in.",
+          "ar": "أوقات انشغالك من الرابط الخاص لتقويمك — Google أو Outlook أو iCloud أو غيرها. دون تسجيل دخول."
+        },
+        "version": "1.0.0",
+        "author": {
+          "name": "Kahf Labs",
+          "url": "https://kahflabs.com"
+        },
+        "host": {
+          "kind": "builtin"
+        },
+        "auth": {
+          "kind": "none"
+        },
+        "capabilities": [
+          {
+            "id": "time.busy",
+            "version": 1,
+            "reason": {
+              "en": "To keep planned focus off the times your calendar says you are busy.",
+              "ar": "لكي لا يُخطَّط تركيز في أوقات يقول تقويمك إنك مشغول فيها."
+            }
+          }
+        ],
+        "settings": [
+          {
+            "key": "url",
+            "kind": "secret-url",
+            "required": true,
+            "label": {
+              "en": "Private calendar address",
+              "ar": "الرابط الخاص للتقويم"
+            },
+            "help": {
+              "en": "Google Calendar: Settings → your calendar → \"Secret address in iCal format\". It starts with https:// and ends with .ics.",
+              "ar": "في Google Calendar: الإعدادات ← تقويمك ← «العنوان السري بتنسيق iCal». يبدأ بـ https:// وينتهي بـ ‎.ics."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "reviewed": true,
+      "manifest": {
+        "kahf_connect": "1",
+        "id": "com.kahflabs.phone-calendar",
+        "name": {
+          "en": "Phone calendar",
+          "ar": "تقويم الهاتف"
+        },
+        "description": {
+          "en": "Busy times from the calendars on this phone, including Google and Outlook accounts added to it. Nothing leaves the phone.",
+          "ar": "أوقات انشغالك من التقاويم على هذا الهاتف، ومنها حسابات Google وOutlook المضافة إليه. لا يغادر شيء الهاتف."
+        },
+        "version": "1.0.0",
+        "author": {
+          "name": "Kahf Labs",
+          "url": "https://kahflabs.com"
+        },
+        "host": {
+          "kind": "builtin"
+        },
+        "auth": {
+          "kind": "none"
+        },
+        "capabilities": [
+          {
+            "id": "time.busy",
+            "version": 1,
+            "reason": {
+              "en": "To keep planned focus off the times your calendar says you are busy.",
+              "ar": "لكي لا يُخطَّط تركيز في أوقات يقول تقويمك إنك مشغول فيها."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "kahf_connect": "1",
+  "issued_at": "2026-10-27T00:00:00Z",
+  "key_id": "test-only",
+  "entries": [
+    {
+      "reviewed": true,
+      "manifest": {
+        "kahf_connect": "1",
+        "id": "com.kahflabs.calendar-feed",
+        "name": {
+          "en": "Calendar feed",
+          "ar": "رابط التقويم"
+        },
+        "description": {
+          "en": "Busy times from a private calendar address."
+        },
+        "version": "1.0.0",
+        "author": {
+          "name": "Kahf Labs"
+        },
+        "host": {
+          "kind": "builtin"
+        },
+        "auth": {
+          "kind": "none"
+        },
+        "capabilities": [
+          {
+            "id": "time.busy",
+            "version": 1,
+            "reason": {
+              "en": "To plan around busy times."
+            }
+          }
+        ],
+        "settings": [
+          {
+            "key": "url",
+            "kind": "secret-url",
+            "label": {
+              "en": "Address"
+            },
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "reviewed": true,
+      "manifest": {
+        "kahf_connect": "1",
+        "id": "com.kahflabs.mizwala.times",
+        "name": {
+          "en": "Mizwala",
+          "ar": "مزولة"
+        },
+        "description": {
+          "en": "Times you keep for prayer, from Mizwala on this phone."
+        },
+        "version": "1.0.0",
+        "author": {
+          "name": "Kahf Labs"
+        },
+        "host": {
+          "kind": "device",
+          "package": "com.kahf.mizwala"
+        },
+        "auth": {
+          "kind": "none"
+        },
+        "capabilities": [
+          {
+            "id": "time.busy",
+            "version": 1,
+            "reason": {
+              "en": "To keep those times free."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

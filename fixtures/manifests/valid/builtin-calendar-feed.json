@@ -1,0 +1,40 @@
+{
+  "kahf_connect": "1",
+  "id": "com.kahflabs.calendar-feed",
+  "name": {
+    "en": "Calendar feed",
+    "ar": "رابط التقويم"
+  },
+  "description": {
+    "en": "Busy times from a private calendar address."
+  },
+  "version": "1.0.0",
+  "author": {
+    "name": "Kahf Labs"
+  },
+  "host": {
+    "kind": "builtin"
+  },
+  "auth": {
+    "kind": "none"
+  },
+  "capabilities": [
+    {
+      "id": "time.busy",
+      "version": 1,
+      "reason": {
+        "en": "To plan around busy times."
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "url",
+      "kind": "secret-url",
+      "label": {
+        "en": "Address"
+      },
+      "required": true
+    }
+  ]
+}

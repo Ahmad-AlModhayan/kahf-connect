@@ -1,0 +1,43 @@
+{
+  "kahf_connect": "2",
+  "id": "com.example.busy",
+  "name": {
+    "en": "Example busy",
+    "ar": "مثال"
+  },
+  "description": {
+    "en": "Example connector for the conformance suite."
+  },
+  "version": "1.0.0",
+  "author": {
+    "name": "Example Co",
+    "url": "https://example.com"
+  },
+  "host": {
+    "kind": "remote",
+    "url": "https://connect.example.com/mcp"
+  },
+  "auth": {
+    "kind": "bearer",
+    "setting": "token"
+  },
+  "capabilities": [
+    {
+      "id": "time.busy",
+      "version": 1,
+      "reason": {
+        "en": "To plan around your busy times."
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "token",
+      "kind": "secret",
+      "label": {
+        "en": "Token"
+      },
+      "required": true
+    }
+  ]
+}

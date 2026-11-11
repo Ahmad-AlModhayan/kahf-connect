@@ -1,0 +1,67 @@
+{
+  "limit": 20,
+  "valid": [
+    {
+      "items": []
+    },
+    {
+      "items": [
+        {
+          "id": "n1",
+          "title": "Plan",
+          "text": "Ship v2",
+          "url": "https://notes.example.com/n1",
+          "updated_at": "2026-10-26T08:00:00Z"
+        }
+      ]
+    }
+  ],
+  "invalid": [
+    {
+      "rule": "shape",
+      "output": {
+        "notes": []
+      }
+    },
+    {
+      "rule": "id",
+      "output": {
+        "items": [
+          {
+            "id": "",
+            "title": "t",
+            "text": "x"
+          }
+        ]
+      }
+    },
+    {
+      "rule": "id-duplicate",
+      "output": {
+        "items": [
+          {
+            "id": "a",
+            "title": "t",
+            "text": "x"
+          },
+          {
+            "id": "a",
+            "title": "u",
+            "text": "y"
+          }
+        ]
+      }
+    },
+    {
+      "rule": "text",
+      "output": {
+        "items": [
+          {
+            "id": "a",
+            "title": "t"
+          }
+        ]
+      }
+    }
+  ]
+}

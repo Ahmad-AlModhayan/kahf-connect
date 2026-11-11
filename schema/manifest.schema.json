@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kahflabs.com/connect/1/manifest.schema.json",
+  "title": "Kahf Connect manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["kahf_connect", "id", "name", "description", "version", "author", "host", "auth", "capabilities"],
+  "properties": {
+    "kahf_connect": { "const": "1" },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*(\\.[a-z0-9][a-z0-9-]*){2,}$",
+      "maxLength": 128
+    },
+    "name": { "$ref": "#/$defs/localised", "description": "Short name, at most 40 characters per language." },
+    "description": { "$ref": "#/$defs/localised" },
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "author": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "url": { "type": "string", "format": "uri" }
+      }
+    },
+    "homepage": { "type": "string", "format": "uri" },
+    "privacy_url": { "type": "string", "format": "uri" },
+    "host": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind"],
+      "properties": {
+        "kind": { "enum": ["remote", "builtin", "device"] },
+        "url": { "type": "string", "format": "uri" },
+        "package": { "type": "string", "pattern": "^[a-zA-Z][a-zA-Z0-9_]*(\\.[a-zA-Z][a-zA-Z0-9_]*)+$" }
+      },
+      "allOf": [
+        { "if": { "properties": { "kind": { "const": "remote" } } }, "then": { "required": ["url"] } },
+        { "if": { "properties": { "kind": { "const": "device" } } }, "then": { "required": ["package"] } }
+      ]
+    },
+    "auth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind"],
+      "properties": {
+        "kind": { "enum": ["none", "bearer", "oauth2"] },
+        "setting": { "type": "string" },
+        "authorize_url": { "$ref": "#/$defs/secure_url" },
+        "token_url": { "$ref": "#/$defs/secure_url" },
+        "scopes": { "type": "array", "items": { "type": "string" } }
+      },
+      "allOf": [
+        { "if": { "properties": { "kind": { "const": "bearer" } } }, "then": { "required": ["setting"] } },
+        {
+          "if": { "properties": { "kind": { "const": "oauth2" } } },
+          "then": { "required": ["authorize_url", "token_url"] }
+        }
+      ]
+    },
+    "capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "version", "reason"],
+        "properties": {
+          "id": { "enum": ["time.busy", "context.read", "actions.propose"] },
+          "version": { "type": "integer", "minimum": 1 },
+          "reason": { "$ref": "#/$defs/localised" }
+        }
+      }
+    },
+    "settings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["key", "kind", "label"],
+        "properties": {
+          "key": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+          "kind": { "enum": ["text", "url", "secret", "secret-url"] },
+          "label": { "$ref": "#/$defs/localised" },
+          "help": { "$ref": "#/$defs/localised" },
+          "required": { "type": "boolean" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "secure_url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^(https://|http://(localhost|127[.]0[.]0[.]1)(:[0-9]+)?/)",
+      "description": "HTTPS; plain HTTP only on localhost, for development."
+    },
+    "localised": {
+      "type": "object",
+      "required": ["en"],
+      "properties": { "en": { "type": "string", "minLength": 1 } },
+      "additionalProperties": { "type": "string", "minLength": 1 },
+      "propertyNames": { "pattern": "^[a-z]{2}(-[A-Z]{2})?$" }
+    }
+  }
+}

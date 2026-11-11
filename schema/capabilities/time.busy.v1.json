@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kahflabs.com/connect/1/capabilities/time.busy.v1.json",
+  "title": "time.busy@1 — times the person is not free",
+  "tool": "kahf_time_busy_v1",
+  "input": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["from", "to"],
+    "properties": {
+      "from": { "type": "string", "format": "date-time" },
+      "to": { "type": "string", "format": "date-time" }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": ["windows"],
+    "properties": {
+      "windows": {
+        "type": "array",
+        "maxItems": 2000,
+        "items": {
+          "type": "object",
+          "required": ["start", "end"],
+          "properties": {
+            "start": { "type": "string", "format": "date-time" },
+            "end": { "type": "string", "format": "date-time" },
+            "label": { "type": "string", "maxLength": 200 },
+            "all_day": { "type": "boolean" }
+          }
+        }
+      }
+    }
+  },
+  "rules": [
+    "end is after start",
+    "each window meets [from, to)",
+    "times carry an offset or Z"
+  ]
+}

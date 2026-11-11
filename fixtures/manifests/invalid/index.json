@@ -1,0 +1,142 @@
+[
+  {
+    "file": "00-unknown-field.json",
+    "rule": "unknown-field",
+    "schema": true
+  },
+  {
+    "file": "01-version-of-spec.json",
+    "rule": "version-of-spec",
+    "schema": true
+  },
+  {
+    "file": "02-id.json",
+    "rule": "id",
+    "schema": true
+  },
+  {
+    "file": "03-id.json",
+    "rule": "id",
+    "schema": true
+  },
+  {
+    "file": "04-version.json",
+    "rule": "version",
+    "schema": true
+  },
+  {
+    "file": "05-localised.json",
+    "rule": "localised",
+    "schema": true
+  },
+  {
+    "file": "06-localised.json",
+    "rule": "localised",
+    "schema": true
+  },
+  {
+    "file": "07-host-url.json",
+    "rule": "host-url",
+    "schema": true
+  },
+  {
+    "file": "08-host-https.json",
+    "rule": "host-https",
+    "schema": false
+  },
+  {
+    "file": "09-host-package.json",
+    "rule": "host-package",
+    "schema": true
+  },
+  {
+    "file": "10-capabilities.json",
+    "rule": "capabilities",
+    "schema": true
+  },
+  {
+    "file": "11-capability-unknown.json",
+    "rule": "capability-unknown",
+    "schema": true
+  },
+  {
+    "file": "12-capability-reason.json",
+    "rule": "capability-reason",
+    "schema": true
+  },
+  {
+    "file": "13-capability-duplicate.json",
+    "rule": "capability-duplicate",
+    "schema": false
+  },
+  {
+    "file": "14-auth-setting.json",
+    "rule": "auth-setting",
+    "schema": true
+  },
+  {
+    "file": "15-auth-setting.json",
+    "rule": "auth-setting",
+    "schema": false
+  },
+  {
+    "file": "16-auth-oauth2.json",
+    "rule": "auth-oauth2",
+    "schema": true
+  },
+  {
+    "file": "17-auth-oauth2-https.json",
+    "rule": "auth-oauth2-https",
+    "schema": true
+  },
+  {
+    "file": "18-setting-key.json",
+    "rule": "setting-key",
+    "schema": true
+  },
+  {
+    "file": "19-setting-kind.json",
+    "rule": "setting-kind",
+    "schema": true
+  },
+  {
+    "file": "20-uri.json",
+    "rule": "uri",
+    "schema": false
+  },
+  {
+    "file": "21-uri.json",
+    "rule": "uri",
+    "schema": false
+  },
+  {
+    "file": "22-uri.json",
+    "rule": "uri",
+    "schema": false
+  },
+  {
+    "file": "23-uri.json",
+    "rule": "uri",
+    "schema": false
+  },
+  {
+    "file": "24-uri.json",
+    "rule": "uri",
+    "schema": false
+  },
+  {
+    "file": "25-host-https.json",
+    "rule": "host-https",
+    "schema": false
+  },
+  {
+    "file": "26-host-https.json",
+    "rule": "host-https",
+    "schema": false
+  },
+  {
+    "file": "27-auth-oauth2-https.json",
+    "rule": "auth-oauth2-https",
+    "schema": false
+  }
+]

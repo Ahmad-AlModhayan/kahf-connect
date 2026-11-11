@@ -1,0 +1,8 @@
+# Signed files: the signature is over the exact bytes, so git must never
+# rewrite their line endings.
+catalog/** -text
+fixtures/catalog/** -text
+* text=auto eol=lf
+
+# Windows batch files need CRLF.
+*.bat text eol=crlf
